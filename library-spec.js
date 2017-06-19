@@ -1,14 +1,11 @@
 var Library = require('./library'),
-    chai = require('chai');
+    chai = require('chai'),
+    books = require('./data/books');
 
 const should = chai.should();
 
 describe('library', function(){
-  it('exists', function(){
-    Library.should.exist;
-  })
-
-  it('returns a function', function(){
-    Library.should.be.a.function;
+  it('displays all books', function(){
+    Library(books).getAllBooks().should.deep.equal(books);
   })
 })
