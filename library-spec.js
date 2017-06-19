@@ -1,10 +1,14 @@
-var library = require('./library'),
+var Library = require('./library'),
     chai = require('chai');
 
 const should = chai.should();
 
 describe('library', function(){
   it('exists', function(){
-    library.should.exist;
+    Library.should.exist;
+  })
+
+  it('returns a function', function(){
+    Library.should.be.a.function;
   })
 })
