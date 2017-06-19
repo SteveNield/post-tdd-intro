@@ -1,0 +1,23 @@
+{
+  "name": "post-tdd-intro",
+  "version": "1.0.0",
+  "description": "Supporting code for a post introducing TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha *-spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenield/post-tdd-intro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenield/post-tdd-intro/issues"
+  },
+  "homepage": "https://github.com/stevenield/post-tdd-intro#readme",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}
