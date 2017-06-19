@@ -3,6 +3,16 @@ module.exports = function(){
     products: []
   };
 
+  function _calculateBasketTotal(){
+    return state.products.reduce(function(acc, product){
+      return acc + product.price;
+    }, 0.0);
+  }
+
+  function _formatDecimalAsCurrency(decimal){
+    return Number(decimal.toFixed(2));
+  }
+
   function add(product){
     state.products.push(product);
   }
@@ -12,9 +22,7 @@ module.exports = function(){
   }
 
   function getTotalPrice(){
-    return Number(state.products.reduce(function(acc, product){
-      return acc + product.price;
-    }, 0.0).toFixed(2));
+    return _formatDecimalAsCurrency(_calculateBasketTotal());
   }
 
   function applyPercentageDiscount(percentage){
@@ -22,11 +30,9 @@ module.exports = function(){
   }
 
   function getDiscountedTotalPrice(){
-    var total = state.products.reduce(function(acc, product){
-      return acc + product.price;
-    }, 0.0);
+    var total = _calculateBasketTotal();
     var discountFactor = (state.discountPercentage / 100) + 1;
-    return Number(((total / discountFactor).toFixed(2)));
+    return _formatDecimalAsCurrency(total / discountFactor);
   }
 
   return {
